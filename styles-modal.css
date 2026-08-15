@@ -1,0 +1,71 @@
+
+  .email-modal-overlay{
+    position:fixed;inset:0;background:rgba(5,15,40,0.65);
+    backdrop-filter:blur(6px);z-index:9999;
+    display:none;align-items:center;justify-content:center;
+    animation:emailFadeIn .2s ease-out;
+  }
+  .email-modal-overlay.active{display:flex}
+  @keyframes emailFadeIn{from{opacity:0}to{opacity:1}}
+  .email-modal{
+    background:var(--nav-bg);border-radius:20px;
+    padding:32px 28px;max-width:420px;width:90%;
+    box-shadow:0 20px 60px rgba(0,20,60,0.35);
+    text-align:center;position:relative;
+    animation:emailSlideUp .25s ease-out;
+    border:1.5px solid var(--nav-border);
+  }
+  @keyframes emailSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+  .email-modal-close{
+    position:absolute;top:14px;right:14px;
+    background:transparent;border:none;cursor:pointer;
+    width:32px;height:32px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--link);font-size:20px;
+    transition:background .15s;
+  }
+  .email-modal-close:hover{background:var(--link-hbg)}
+  .email-modal-icon{
+    width:64px;height:64px;border-radius:16px;
+    background:linear-gradient(135deg,#1565C0,#42A5F5);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:28px;margin:0 auto 16px;
+    box-shadow:0 6px 20px rgba(21,101,192,0.35);
+  }
+  .email-modal h3{
+    font-family:'Nunito',sans-serif;font-size:20px;font-weight:800;
+    color:var(--link);margin:0 0 8px;
+  }
+  .email-modal p{
+    font-size:14px;color:var(--link);opacity:0.75;
+    margin:0 0 20px;line-height:1.5;
+  }
+  .email-address-box{
+    background:var(--link-hbg);border:1.5px solid var(--nav-border);
+    border-radius:12px;padding:14px 18px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    margin-bottom:16px;
+  }
+  .email-address-text{
+    font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;
+    color:var(--blue);word-break:break-all;text-align:left;flex:1;
+  }
+  .email-copy-btn{
+    background:linear-gradient(135deg,#1565C0,#1E90FF);
+    color:#fff;border:none;cursor:pointer;
+    padding:8px 16px;border-radius:8px;
+    font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;
+    display:flex;align-items:center;gap:6px;
+    transition:all .18s;white-space:nowrap;
+    box-shadow:0 3px 10px rgba(21,101,192,0.3);
+  }
+  .email-copy-btn:hover{
+    background:linear-gradient(135deg,#0D47A1,#1565C0);
+    transform:translateY(-1px);
+  }
+  .email-copy-btn.copied{
+    background:linear-gradient(135deg,#10B981,#34D399);
+  }
+  .email-modal-hint{
+    font-size:12px;color:var(--link);opacity:0.6;margin:0;
+  }
